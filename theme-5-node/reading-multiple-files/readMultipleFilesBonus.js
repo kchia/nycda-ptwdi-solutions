@@ -16,17 +16,16 @@ readdirPromise('./files/').then(function(files) {
   var file;
 
   for (var i = 0; i < files.length; i++) {
-	file = `./files/${files[i]}`;		
+    file = `./files/${files[i]}`;		
     promises.push(readFilePromise(file));
   }
 
   Promise.all(promises).then(function(results) {
-      var totalFilesRead = results.length;
-      console.log(`Done reading ${totalFilesRead} files: ${results}`);
+      console.log(`Done reading ${results.length} files: ${results}`);
   }, function(error) {
       console.log(`Error reading files: ${error}`);
   });
 
 }, function(error) {
-    console.log( 'readdir failed.');
+    console.log( `readdir failed: ${error}`);
 });

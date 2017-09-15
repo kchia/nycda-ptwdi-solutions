@@ -48,8 +48,42 @@ app.use(function(request, response, next) {
 });
 
 app.post('/save', function(request, response) {
-  console.log(request.body);
   response.send('save request received');
+});
+
+/**
+  EXERCISE: BODY PARSING
+    curl -d '{"members":["foo", "baz", bar"]}' -H "Content-Type: application/json" -X POST http://localhost:3000/submit
+
+**/
+
+app.post('/submit', function(request, response) {
+  console.log(request.body);
+
+  if(request.body.members.indexOf('foo') < 0) {
+    response.status(404).send('uh oh! foo not found in members')
+  } else {
+    response.send('request received');
+  }
+});
+
+/**
+  EXERCISE: BODY PARSING
+  - Create a /checkNumber endpoint
+  - Use curl POST to issue a JSON payload to your endpoint ({ "numbers": ["11", "4", "10"] })
+  - Check if every number is greater than 10
+  - Return an appropriate message if every number is greater than 10
+**/
+app.post('/checkNumber', function(request, response) {
+  var numbers = request.body.numbers;
+  for(var i = 0; i < numbers.length; i++) {
+    if(numbers[i] <= 10) {
+      response.send('There is at least one number less than 10');
+    } 
+  }
+
+  response.send('All numbers are greater than 10');
+
 });
 
 /**
@@ -129,10 +163,4 @@ app.get('*', function(request, response) {
 app.listen(3000, function() {
   console.log('Example app is listening on port 3000!');
 });
-
-
-/**
-  EXERCISE: BODY PARSING (10 minutes)
-**/
-
 

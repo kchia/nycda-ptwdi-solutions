@@ -1,0 +1,53 @@
+doctype html
+html(lang="en")
+  head
+    title="Grocery List"
+    link(href='./main.css', rel='stylesheet')
+  body
+    div.iteration-demo
+      h1
+        | My Grocery List
+      ul
+        each grocery in groceries
+          li=grocery.store
+            span= `: ${grocery.list.join(', ')}`
+    div.partial-demo
+      h1
+        | My Grocery List, rendered with Partials
+      ul
+        include ./item.pug
+    div.url-demo
+      - var url = 'https://www.cnn.com';
+      a(
+        href=url
+      )
+        | Go to CNN
+      - url = 'https://example.com'
+      a(
+        href=url
+      )
+        | Another link
+    div.conditionals-demo
+      - var user = { authorized: false }
+      .user 
+        if user.authorized
+          h2
+            | User is authorized.
+        else
+          h2
+            | User is not authorized.
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+

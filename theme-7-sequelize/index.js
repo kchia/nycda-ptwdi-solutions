@@ -1,3 +1,20 @@
+/**
+  OBJECT RELATIONAL MAPPING (ORM)
+    - A way to access and manipulate your database without having to write SQL queries
+    - ORMs generate SQL queries for you based on your JavaScript data model
+    - Allows you to focus mainly on JavaScript code
+    - This can cut down on SQL typos and mistakes and speed development
+**/
+  
+/**
+  SEQUELIZE
+  - http://sequelize.readthedocs.io/en/latest/
+  - Promise based ORM for NodeJS
+  - Read from, write to, and modify PostgreSQL tables with JavaScript
+  - npm install --save sequelize
+  - createuser -s -r postgres
+**/
+
 var Sequelize = require('sequelize');
 var sequelize = new Sequelize('postgres://houchia@localhost:5432/cap_app');
 
@@ -43,6 +60,18 @@ var User = sequelize.define('user', {
   }
 });
 
+var Post = sequelize.define('post', {
+  // user_id: {
+  //   type: Sequelize.INTEGER,
+  //   allowNull: false,
+  //   references: {
+  //     model: User,
+  //     key: 'id'
+  //   }
+  // },
+  title: Sequelize.STRING
+});
+
 User.sync().then(function(){
   User.create({
     name: 'Hou Chia'
@@ -55,18 +84,6 @@ User.sync().then(function(){
   User.create({
     name: 'Mark'
   });
-});
-
-var Post = sequelize.define('post', {
-  user_id: {
-    type: Sequelize.INTEGER,
-    allowNull: false,
-    references: {
-      model: User,
-      key: 'id'
-    }
-  },
-  title: Sequelize.STRING
 });
 
 Post
@@ -87,6 +104,9 @@ Post
       user_id: 1
     });
 });
+
+User.hasMany(Post);
+Post.belongsTo(User);
 
 Post.findAll().then(function(rows) {
   console.log(rows);
@@ -154,15 +174,6 @@ app.get('/posts/search', function (request, response) {
 
 });
 
-
 app.listen(3002, function () {
   console.log('Example app listening on port 3002!');
 });
-
-
-
-
-
-
-
-

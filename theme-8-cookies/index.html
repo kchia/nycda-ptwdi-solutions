@@ -1,0 +1,58 @@
+<!doctype html>
+
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+
+  <title>Cookies</title>
+ 
+</head>
+
+<body>
+
+  <div id='form-container'>
+    <form id='form'>
+      <label>Name:</label>
+      <input id='name' type='text'>
+      <button id='save-button'>Save</button>
+    </form>
+  </div>
+
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+  <script src="./node_modules/cookies-js/dist/cookies.js"></script>
+  <script>
+
+    /**
+      YOUR CODE HERE
+    **/
+
+    // Let's pseudocode
+
+    var NAME_KEY = 'nameField';
+    var storedName = Cookies.get(NAME_KEY);
+
+    // check cookie storage
+      // if user name is stored, 
+      if(storedName) {
+        //alert Welcome Message
+        alert(`Welcome back ${storedName}!`);
+      } else {
+      // if not
+        // keep background color red
+        $('#form-container').css('background-color', 'red');
+      }
+
+
+    // when user clicks on save button
+    $('#save-button').click(function(event) {
+      // store input into cookie storage
+      event.preventDefault();
+      var nameValue = $('#name').val();
+      Cookies.set(NAME_KEY, nameValue);
+    });
+
+
+  </script>
+
+</body>
+</html>

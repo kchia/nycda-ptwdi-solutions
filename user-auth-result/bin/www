@@ -1,0 +1,14 @@
+#!/usr/bin/env node
+
+var app = require('../server');
+var models = require("../db");
+
+app.set('port', 3001);
+
+console.log('sync...')
+models.sequelize.sync().then(function () {
+    console.log('start server...')
+    var server = app.listen(app.get('port'), function() {
+      console.log('Server listening on localhost:' + server.address().port);
+    });
+});

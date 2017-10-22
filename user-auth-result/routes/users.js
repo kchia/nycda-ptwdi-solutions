@@ -5,6 +5,8 @@ const models  = require('../db');
 module.exports = function(passport) {
 
 	// POST /api/user/signup
+
+	// curl -d '{"email": "qwer@gmail.com", "password":"654321" }' -H "Content-Type: application/json" -X POST http://localhost:3001/api/user/signup
 	router.post('/signup', function(req, res, next) {
 		passport.authenticate('local-signup', function(err, user, info) {
 			if (err) {
@@ -29,6 +31,7 @@ module.exports = function(passport) {
 	});
 
 	// POST /api/user/login
+	// curl -d '{"email": "qwer@gmail.com", "password":"654321" }' -H "Content-Type: application/json" -X POST http://localhost:3001/api/user/login
 	router.post('/login', function(req, res, next) {
 		passport.authenticate('local-login', function(err, user, info) {
 			if (err) {

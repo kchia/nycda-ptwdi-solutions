@@ -11,5 +11,5 @@ import registerServiceWorker from './registerServiceWorker';
 // ReactDOM.render(<App />, document.getElementById('root'));
 // ReactDOM.render(<AppWithProps />, document.getElementById('root'));
 // ReactDOM.render(<ContactCards />, document.getElementById('root'));
-ReactDOM.render(<Decrement />, document.getElementById('root'));
+ReactDOM.render(<Decrement number={10} />, document.getElementById('root'));
 registerServiceWorker();

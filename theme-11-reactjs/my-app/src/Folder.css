@@ -1,0 +1,9 @@
+.file-list {
+	display: block;
+	/*visibility: visible;*/
+}
+
+.file-list-hidden {
+	display: none;
+	/*visibility: hidden;*/
+}

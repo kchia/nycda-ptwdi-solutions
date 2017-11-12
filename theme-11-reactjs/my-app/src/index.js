@@ -8,7 +8,8 @@ import './index.css';
 // import Folder from './Folder';
 // import ControlledComponentExample from './ControlledComponentExample';
 // import UncontrolledComponentExample from './UncontrolledComponentExample';
-import FormEdit from './FormEdit';
+// import FormEdit from './FormEdit';
+import List from './List';
 
 import registerServiceWorker from './registerServiceWorker';
 
@@ -19,8 +20,9 @@ import registerServiceWorker from './registerServiceWorker';
 // ReactDOM.render(<Folder />, document.getElementById('root'));
 // ReactDOM.render(<ControlledComponentExample />, document.getElementById('root'));
 // ReactDOM.render(<UncontrolledComponentExample />, document.getElementById('root'));
-ReactDOM.render(<FormEdit 
-	firstName='Hou'
-	lastName='Chia' 
-	/>, document.getElementById('root'));
+// ReactDOM.render(<FormEdit 
+// 	firstName='Hou'
+// 	lastName='Chia' 
+// 	/>, document.getElementById('root'));
+ReactDOM.render(<List />, document.getElementById('root'));
 registerServiceWorker();

@@ -1,0 +1,15 @@
+.default-mode {
+  display: none;	
+}
+
+.non-default-mode {
+  display: block;
+}
+
+.edit-mode {
+  display: block;
+}
+
+.edit-mode-hidden {
+  display: none;
+}

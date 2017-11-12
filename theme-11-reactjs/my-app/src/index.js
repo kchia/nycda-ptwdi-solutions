@@ -7,7 +7,8 @@ import './index.css';
 // import Decrement from './Decrement';
 // import Folder from './Folder';
 // import ControlledComponentExample from './ControlledComponentExample';
-import UncontrolledComponentExample from './UncontrolledComponentExample';
+// import UncontrolledComponentExample from './UncontrolledComponentExample';
+import FormEdit from './FormEdit';
 
 import registerServiceWorker from './registerServiceWorker';
 
@@ -17,5 +18,9 @@ import registerServiceWorker from './registerServiceWorker';
 // ReactDOM.render(<Decrement number={10} />, document.getElementById('root'));
 // ReactDOM.render(<Folder />, document.getElementById('root'));
 // ReactDOM.render(<ControlledComponentExample />, document.getElementById('root'));
-ReactDOM.render(<UncontrolledComponentExample />, document.getElementById('root'));
+// ReactDOM.render(<UncontrolledComponentExample />, document.getElementById('root'));
+ReactDOM.render(<FormEdit 
+	firstName='Hou'
+	lastName='Chia' 
+	/>, document.getElementById('root'));
 registerServiceWorker();

@@ -9,7 +9,9 @@ import './index.css';
 // import ControlledComponentExample from './ControlledComponentExample';
 // import UncontrolledComponentExample from './UncontrolledComponentExample';
 // import FormEdit from './FormEdit';
-import List from './List';
+// import List from './List';
+// import { Parent, Child } from './ParentChild';
+import Presentational from './Presentational';
 
 import registerServiceWorker from './registerServiceWorker';
 
@@ -24,5 +26,26 @@ import registerServiceWorker from './registerServiceWorker';
 // 	firstName='Hou'
 // 	lastName='Chia' 
 // 	/>, document.getElementById('root'));
-ReactDOM.render(<List />, document.getElementById('root'));
+// ReactDOM.render(<List />, document.getElementById('root'));
+// ReactDOM.render(
+//   <Parent>
+//     <Child
+//       childName="Everette"
+//       hasAccess={false}
+//       message="Super duper Message"
+//     />
+//     <Child
+//       childName="Sally"
+//       hasAccess={false}
+//       message="Hi Sally How Are you"
+//     />
+//     <Child
+//       childName="Bob"
+//       hasAccess={true}
+//       message="Hi Bob How Are you"
+//     />
+//   </Parent>
+// , document.getElementById('root'));
+ReactDOM.render(<Presentational />, document.getElementById('root'));
+
 registerServiceWorker();

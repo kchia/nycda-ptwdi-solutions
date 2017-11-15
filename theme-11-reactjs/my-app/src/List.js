@@ -33,19 +33,19 @@ class List extends Component {
 		// create a copy of the data		
 		let files = [...this.state.data];
 
+		let filesToRender = files.map(file => {
+			return (
+				<li
+					key={file.id}
+				>
+					{file.name}
+				</li>
+			)
+		});
+
 		return(
 			<ul>
-				{
-					files.map(file => {
-						return (
-							<li
-								key={file.id}
-							>
-								{file.name}
-							</li>
-						)
-					})
-				}
+				{filesToRender}
 			</ul>
 		)
 	}

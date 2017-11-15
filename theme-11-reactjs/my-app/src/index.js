@@ -11,7 +11,8 @@ import './index.css';
 // import FormEdit from './FormEdit';
 // import List from './List';
 // import { Parent, Child } from './ParentChild';
-import Presentational from './Presentational';
+// import Presentational from './Presentational';
+import Application from './counter/Application';
 
 import registerServiceWorker from './registerServiceWorker';
 
@@ -46,6 +47,7 @@ import registerServiceWorker from './registerServiceWorker';
 //     />
 //   </Parent>
 // , document.getElementById('root'));
-ReactDOM.render(<Presentational />, document.getElementById('root'));
+// ReactDOM.render(<Presentational />, document.getElementById('root'));
+ReactDOM.render(<Application />, document.getElementById('root'));
 
 registerServiceWorker();

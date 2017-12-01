@@ -1,0 +1,14 @@
+.items {
+  margin: 0 auto;
+  width: 50%;
+  border: 1px solid black;
+  padding: 20px;
+}
+
+.items h1 {
+  text-align: center;
+}
+
+.items .is-expired {
+  color: red;
+}
